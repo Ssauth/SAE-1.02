@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="init" />
+    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="add etu">
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibTri2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TNP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TNP.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +35,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/thoma/Desktop/Programmation/Cours/Blagnac/Semestre 1/Dev2/TP3"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -41,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704968213883</updated>
-      <workItem from="1704968215219" duration="677000" />
+      <workItem from="1704968215219" duration="1842000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1704968373229</created>
@@ -50,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704968373229</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add etu">
+      <created>1704968956121</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704968956121</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -69,6 +82,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="add etu" />
+    <option name="LAST_COMMIT_MESSAGE" value="add etu" />
   </component>
 </project>
