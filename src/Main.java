@@ -107,16 +107,29 @@ public class Main{
      * @param pfNom IN Le nom de l'étudiant recherché.
      * @return L'indice de l'étudiant dans le tableau s'il est trouvé, sinon retourne -1.
      */
-    public static int rechercheSansRupture(TNP pfTNPEtu, String pfPrenom, String pfNom){
-        int traceI=0;
-        int indice=-1;
+    public static Experimentation rechercheSansRupture(TNP pfTNPEtu, String pfPrenom, String pfNom){
+        int passageBoucle=0;
+        int comparaisons=0;
+        Experimentation retour=null;
         for(int i=0;i<pfTNPEtu.nbElt;i++){
-            if(pfTNPEtu.lesElements[i].nom.equals(pfNom) && pfTNPEtu.lesElements[i].prenom.equals(pfPrenom))
-                indice=i;
-            traceI++;
+            /*Si la première condition est fausse, le programme ne testera pas le seconde. Cela permet de ne pas augmenter la complexité, tout en réduisant la taille de la fonction.
+            C'est donc la meilleure solution, mais elle ne permet pas de bien comptabiliser le nombre de comparaisons.
+            if((pfTNPEtu.lesElements[i].nom.equals(pfNom)) && (pfTNPEtu.lesElements[i].prenom.equals(pfPrenom))){
+                passageBoucle++;
+                return new Experimentation(pfTNPEtu.lesElements[indice],passageBoucle,comparaisons);
+            }
+             */
+            if(pfTNPEtu.lesElements[i].nom.equals(pfNom)){
+                if (pfTNPEtu.lesElements[i].prenom.equals(pfPrenom)) {
+                    comparaisons+=2;
+                    passageBoucle++;
+                    retour= new Experimentation(pfTNPEtu.lesElements[i], passageBoucle, comparaisons);
+                }
+            }
+            comparaisons++;
+            passageBoucle++;
         }
-        System.out.println(indice!=-1 ? ("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.") : ("Nous avons parcouru "+traceI+" éléments de la liste sans trouver l'élément recherché."));
-        return indice;
+        return retour;
     }
 
     /**
@@ -128,19 +141,28 @@ public class Main{
      * @param pfNom IN Le nom de l'étudiant recherché.
      * @return L'indice de l'étudiant dans le tableau s'il est trouvé, sinon retourne -1.
      */
-    public static int rechercheAvecRupture(TNP pfTNPEtu, String pfPrenom, String pfNom){
-        int traceI=0;
-        int indice=-1;
+    public static Experimentation rechercheAvecRupture(TNP pfTNPEtu, String pfPrenom, String pfNom){
+        int passageBoucle=0;
+        int comparaisons=0;
         for(int i=0;i<pfTNPEtu.nbElt;i++){
+            /*Si la première condition est fausse, le programme ne testera pas le seconde. Cela permet de ne pas augmenter la complexité, tout en réduisant la taille de la fonction.
+            C'est donc la meilleure solution, mais elle ne permet pas de bien comptabiliser le nombre de comparaisons.
             if((pfTNPEtu.lesElements[i].nom.equals(pfNom)) && (pfTNPEtu.lesElements[i].prenom.equals(pfPrenom))){
-                traceI++;
-                System.out.println("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.");
-                return i;
+                passageBoucle++;
+                return new Experimentation(pfTNPEtu.lesElements[indice],passageBoucle,comparaisons);
             }
-            traceI++;
+             */
+            if(pfTNPEtu.lesElements[i].nom.equals(pfNom)){
+                if (pfTNPEtu.lesElements[i].prenom.equals(pfPrenom)) {
+                    comparaisons+=2;
+                    passageBoucle++;
+                    return new Experimentation(pfTNPEtu.lesElements[i], passageBoucle, comparaisons);
+                }
+            }
+            comparaisons++;
+            passageBoucle++;
         }
-        System.out.println("Nous avons parcouru "+traceI+" éléments de la liste sans trouver l'élément recherché.");
-        return indice;
+        return null;
     }
 
     /**
@@ -152,58 +174,59 @@ public class Main{
      * @param pfNom IN Le nom de l'étudiant recherché.
      * @return L'indice de l'étudiant dans le tableau s'il est trouvé, sinon retourne -1.
      */
-    public static int rechercheDichotomie(TNP pfTNPEtu, String pfPrenom, String pfNom){
-        int traceI=0;
-        int indiceR=-1;
+    public static Experimentation rechercheDichotomie(TNP pfTNPEtu, String pfPrenom, String pfNom){
+        int passageBoucle=0;
+        int comparaisons=0;
         int indice= pfTNPEtu.nbElt/2;
-        int indiceTemp= -1;
         int borneInf= 0;
         int borneSup= pfTNPEtu.nbElt;
 
-        while (indiceTemp!=(indice+borneSup)/2 && indiceTemp!=(indice+borneInf)/2){
+        while (borneSup!=borneInf){
             if (pfNom.compareTo(pfTNPEtu.lesElements[indice].nom)==0){
                 if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)==0){
-                    traceI++;
-                    System.out.println("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.");
-                    return indice;
+                    passageBoucle++;
+                    comparaisons++;
+                    return new Experimentation(pfTNPEtu.lesElements[indice],passageBoucle,comparaisons);
                 } else if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)>0) {
-                borneSup=indice;
-                indice=(indice+borneSup)/2;
-                } else {
+                    comparaisons+=2;
                     borneInf=indice;
-                    indice=(indice+borneInf)/2;
+                } else {
+                    comparaisons+=2;
+                    borneSup=indice;
                 }
-            } else if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)>0) {
-                borneSup=indice;
-                indice=(indice+borneSup)/2;
-            } else {
+            } else if (pfNom.compareTo(pfTNPEtu.lesElements[indice].nom)>0) {
+                comparaisons++;
                 borneInf=indice;
-                indice=(indice+borneInf)/2;
+            } else {
+                comparaisons++;
+                borneSup=indice;
             }
-            traceI++;
+            indice=(borneInf+borneSup)/2;
+            passageBoucle++;
         }
-        System.out.println("Nous avons parcouru "+traceI+" éléments de la liste sans trouver l'élément recherché.");
-        return indiceR;
+        return null;
     }
 
     public static void main(String[] args){
-        TNP Liste = new TNP(250);
+        TNP liste = new TNP(250);
         try {
             // appel de la fonction de lecture du fichier avec le nom du fichier et le TNP
-            getListe("listenomssansaccent.csv", Liste);
+            getListe("listenomssansaccent.csv", liste);
 
             // appel de la fonction trier avec le TNP pour trier le TNP
-            trierEtu(Liste);
+            trierEtu(liste);
 
             //Afficher les informations de tout les étudiants du TNP
-            for(int i=0;i<nbEtudiant(Liste);i++){
-                AfficheEtu(Liste.lesElements[i]);
+            for(int i=0;i<nbEtudiant(liste);i++){
+                AfficheEtu(liste.lesElements[i]);
 
             }
 
-            System.out.println("Il y a : " + nbEtudiant(Liste) + " personnes.");
-            System.out.println(rechercheSansRupture(Liste,"Camille","Zole"));
-            System.out.println(rechercheAvecRupture(Liste,"Barack","Afritt"));
+            System.out.println("Il y a : " + nbEtudiant(liste) + " personnes.");
+            System.out.println(rechercheSansRupture(liste,"Camille","Zole"));
+            System.out.println(rechercheAvecRupture(liste,"Barack","Afritt"));
+            System.out.println(rechercheDichotomie(liste,"Camille","Zole"));
+            System.out.println(rechercheDichotomie(liste,"Barack","Afritt"));
 
         } catch (Exception e) {
             System.out.println("Erreur : " + e.getMessage());
