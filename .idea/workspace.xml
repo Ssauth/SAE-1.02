@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="rechercheDichotomie fini, à tester">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Experimentation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestRecherches.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAE 1.02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SAE 1.02.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="test fait et passés">
+      <change beforePath="$PROJECT_DIR$/src/TestRecherches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestRecherches.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +90,7 @@
       <updated>1704968213883</updated>
       <workItem from="1704968215219" duration="1842000" />
       <workItem from="1704970158440" duration="636000" />
-      <workItem from="1705706033049" duration="7452000" />
+      <workItem from="1705706033049" duration="8153000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1704968373229</created>
@@ -125,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705709454953</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test fait et passés">
+      <created>1705715154253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705715154253</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +149,7 @@
     <MESSAGE value="add etu" />
     <MESSAGE value="trier etu" />
     <MESSAGE value="rechercheDichotomie fini, à tester" />
-    <option name="LAST_COMMIT_MESSAGE" value="rechercheDichotomie fini, à tester" />
+    <MESSAGE value="test fait et passés" />
+    <option name="LAST_COMMIT_MESSAGE" value="test fait et passés" />
   </component>
 </project>
