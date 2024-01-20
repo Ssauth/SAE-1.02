@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="trier etu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Etudiant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +35,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/thoma/Desktop/Programmation/Cours/Blagnac/Semestre 1/Dev2/SAE 1.02"
+    "last_opened_file_path": "D:/Cours/S1/Dev/SAE-1.02"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -47,6 +48,7 @@
       <updated>1704968213883</updated>
       <workItem from="1704968215219" duration="1842000" />
       <workItem from="1704970158440" duration="636000" />
+      <workItem from="1705706033049" duration="2151000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1704968373229</created>

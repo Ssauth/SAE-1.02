@@ -1,7 +1,89 @@
+import java.io.*;
+import java.util.Scanner;
+
 public class Main{
 
+    /** Donne le nombre d’étudiants de la liste pfListe
+     *  @param pfListe IN TNP contenant la liste d'étudiants nom, prenom
+     *  @return le nombre d’étudiants de la liste
+     **/
+    public static int nbEtudiant(TNP pfListe){
+        return pfListe.nbElt; //Nombre d'éléments effectif du TNP
+    }
+
+    /**
+     * Charge la liste des étudiants depuis un fichier spécifié dans un TNP donné.
+     *
+     * @param pfFileName IN Le chemin du fichier contenant la liste des étudiants.
+     * @param pfListe OUT Le TNP dans lequel charger la liste des étudiants.
+     * @throws FileNotFoundException Si le fichier spécifié n'est pas trouvé.
+     */
+    public static void getListe(String pfFileName,TNP pfListe) //change return value
+            throws FileNotFoundException{
+
+        // Ouvre un fichier et compte le nombre  de lignes du fichier.
+        //   Ce nombre de lignes correspond au nombre d'étudiants
+        BufferedReader read = new BufferedReader(new FileReader(pfFileName));
+
+        // le try catch est la pour recuperer des erreurs eventuelles de lecture
+        // dans le fichier. Si une erreur se produit, ce sont les instructions
+        // du catch qui seront executees (sera vu en semaine 46).
+        try {
+            while (read.readLine() != null) {
+                pfListe.nbElt++;
+            }
+            read.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("nombre de lignes/etudiants : " + pfListe.nbElt);
+
+        // lecture du fichier pour récupérer les noms et prénoms
+        String line = "";
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(pfFileName));
+            int cpt = 0; // numero de l'etudiant en lecture
+            System.out.println("nombre de lignes : " + pfListe.nbElt);
+
+            // Boucle qui parcourt toute les lignes jusqu'à trouver une ligne vide
+            while ((line = reader.readLine()) != null) {
+
+                // Separer tout les token avec un virgule
+                String[] token = line.split(",");
+
+                //Ajout des token dans le TNP token0 = nom, token1 = prénom, token2 = groupe, token3 = groupeTP
+                pfListe.lesElements[cpt] = new Etudiant(token[0],token[1],Integer.parseInt(token[2]),token[3]);
+
+                cpt ++;
+            }
+            reader.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Affiche les informations d'un étudiant.
+     *
+     * @param pfEtudiant IN L'objet Etudiant dont les informations doivent être affichées.
+     */
+    public static void AfficheEtu(Etudiant pfEtudiant){
+        System.out.println("Nom : "+pfEtudiant.nom + "\nPrénom : "+pfEtudiant.prenom + "\nGroupe : "+ pfEtudiant.groupe + "\nGroupeTP : "+ pfEtudiant.groupeTP+"\n");
+
+    }
+
+    /**
+     * Trie un tableau d'étudiants par ordre croissant des noms et, en cas d'égalité, par ordre croissant des prénoms.
+     * Utilise le tri par sélection.
+     *
+     * @param pfTNPEtu IN/OUT Le TNP d'étudiants à trier.
+     */
     public static void trierEtu(TNP pfTNPEtu) {
-        int nbMembres = pfTNPEtu.nbElt;
+        int nbMembres = nbEtudiant(pfTNPEtu);
         for (int i = 0; i < nbMembres - 1; i++) {
             int indiceMin = i;
             for (int j = i + 1; j < nbMembres; j++)
@@ -16,43 +98,116 @@ public class Main{
         }
     }
 
-    public static int rechercheSansRupture(TNP pfTNPEtu, Etudiant pfEtudiant){
+    /**
+     * Recherche un étudiant dans un tableau par son prénom et nom sans interruption de boucle.
+     * Affiche le nombre d'éléments parcourus.
+     *
+     * @param pfTNPEtu IN Le tableau TNP d'étudiants dans lequel effectuer la recherche.
+     * @param pfPrenom IN Le prénom de l'étudiant recherché.
+     * @param pfNom IN Le nom de l'étudiant recherché.
+     * @return L'indice de l'étudiant dans le tableau s'il est trouvé, sinon retourne -1.
+     */
+    public static int rechercheSansRupture(TNP pfTNPEtu, String pfPrenom, String pfNom){
         int traceI=0;
         int indice=-1;
         for(int i=0;i<pfTNPEtu.nbElt;i++){
-            if(pfTNPEtu.lesElements[i].equals(pfEtudiant))
+            if(pfTNPEtu.lesElements[i].nom.equals(pfNom) && pfTNPEtu.lesElements[i].prenom.equals(pfPrenom))
                 indice=i;
             traceI++;
         }
-        System.out.println("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.");
+        System.out.println(indice!=-1 ? ("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.") : ("Nous avons parcouru "+traceI+" éléments de la liste sans trouver l'élément recherché."));
         return indice;
     }
-    public static int rechercheAvecRupture(TNP pfTNPEtu, Etudiant pfEtudiant){
+
+    /**
+     * Recherche un étudiant dans un tableau par son prénom et nom avec une rupture de boucle dès que l'étudiant a été trouvé.
+     * Affiche le nombre d'éléments parcourus.
+     *
+     * @param pfTNPEtu IN Le TNP d'étudiants dans lequel effectuer la recherche.
+     * @param pfPrenom IN Le prénom de l'étudiant recherché.
+     * @param pfNom IN Le nom de l'étudiant recherché.
+     * @return L'indice de l'étudiant dans le tableau s'il est trouvé, sinon retourne -1.
+     */
+    public static int rechercheAvecRupture(TNP pfTNPEtu, String pfPrenom, String pfNom){
         int traceI=0;
         int indice=-1;
         for(int i=0;i<pfTNPEtu.nbElt;i++){
-            if(pfTNPEtu.lesElements[i].equals(pfEtudiant)){
-                indice=i;
+            if((pfTNPEtu.lesElements[i].nom.equals(pfNom)) && (pfTNPEtu.lesElements[i].prenom.equals(pfPrenom))){
                 traceI++;
-                break;
+                System.out.println("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.");
+                return i;
             }
             traceI++;
         }
-        System.out.println("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.");
+        System.out.println("Nous avons parcouru "+traceI+" éléments de la liste sans trouver l'élément recherché.");
         return indice;
     }
-    public static int rechercheDichotomie(TNP pfTNPEtu, Etudiant pfEtudiant){
 
-        return 0;
+    /**
+     * Recherche un étudiant dans un tableau trié par ordre alphabétique des noms et, en cas d'égalité, des prénoms,
+     * en utilisant l'algorithme de recherche par dichotomie.
+     *
+     * @param pfTNPEtu IN Le TNP d'étudiants trié dans lequel effectuer la recherche.
+     * @param pfPrenom IN Le prénom de l'étudiant recherché.
+     * @param pfNom IN Le nom de l'étudiant recherché.
+     * @return L'indice de l'étudiant dans le tableau s'il est trouvé, sinon retourne -1.
+     */
+    public static int rechercheDichotomie(TNP pfTNPEtu, String pfPrenom, String pfNom){
+        int traceI=0;
+        int indiceR=-1;
+        int indice= pfTNPEtu.nbElt/2;
+        int indiceTemp= -1;
+        int borneInf= 0;
+        int borneSup= pfTNPEtu.nbElt;
+
+        while (indiceTemp!=(indice+borneSup)/2 && indiceTemp!=(indice+borneInf)/2){
+            if (pfNom.compareTo(pfTNPEtu.lesElements[indice].nom)==0){
+                if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)==0){
+                    traceI++;
+                    System.out.println("Nous avons parcouru "+traceI+" éléments de la liste pour trouver l'élément recherché.");
+                    return indice;
+                } else if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)>0) {
+                borneSup=indice;
+                indice=(indice+borneSup)/2;
+                } else {
+                    borneInf=indice;
+                    indice=(indice+borneInf)/2;
+                }
+            } else if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)>0) {
+                borneSup=indice;
+                indice=(indice+borneSup)/2;
+            } else {
+                borneInf=indice;
+                indice=(indice+borneInf)/2;
+            }
+            traceI++;
+        }
+        System.out.println("Nous avons parcouru "+traceI+" éléments de la liste sans trouver l'élément recherché.");
+        return indiceR;
     }
-
-
-
-
-
 
     public static void main(String[] args){
+        TNP Liste = new TNP(250);
+        try {
+            // appel de la fonction de lecture du fichier avec le nom du fichier et le TNP
+            getListe("listenomssansaccent.csv", Liste);
 
+            // appel de la fonction trier avec le TNP pour trier le TNP
+            trierEtu(Liste);
+
+            //Afficher les informations de tout les étudiants du TNP
+            for(int i=0;i<nbEtudiant(Liste);i++){
+                AfficheEtu(Liste.lesElements[i]);
+
+            }
+
+            System.out.println("Il y a : " + nbEtudiant(Liste) + " personnes.");
+            System.out.println(rechercheSansRupture(Liste,"Camille","Zole"));
+            System.out.println(rechercheAvecRupture(Liste,"Barack","Afritt"));
+
+        } catch (Exception e) {
+            System.out.println("Erreur : " + e.getMessage());
+        }
     }
-
 }
+
