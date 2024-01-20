@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="Tout les tests fait et passés">
+    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="boucles inf corrigées, ajout indice expérimentation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Experimentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experimentation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -31,20 +31,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Cours/S1/Dev/SAE-1.02"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Cours/S1/Dev/SAE-1.02&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.TestRecherches.testEtuNotExist">
+}</component>
+  <component name="RunManager">
     <configuration name="TestRecherches.testEtuNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SAE 1.02" />
       <option name="PACKAGE_NAME" value="" />
@@ -105,7 +105,9 @@
       <workItem from="1704968215219" duration="1842000" />
       <workItem from="1704970158440" duration="636000" />
       <workItem from="1705706033049" duration="8766000" />
-      <workItem from="1705746483567" duration="364000" />
+      <workItem from="1705746483567" duration="530000" />
+      <workItem from="1705757412784" duration="627000" />
+      <workItem from="1705775624339" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1704968373229</created>
@@ -149,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705715932009</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="boucles inf corrigées, ajout indice expérimentation">
+      <created>1705746911891</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705746911891</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +182,7 @@
     <MESSAGE value="rechercheDichotomie fini, à tester" />
     <MESSAGE value="test fait et passés" />
     <MESSAGE value="Tout les tests fait et passés" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tout les tests fait et passés" />
+    <MESSAGE value="boucles inf corrigées, ajout indice expérimentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="boucles inf corrigées, ajout indice expérimentation" />
   </component>
 </project>

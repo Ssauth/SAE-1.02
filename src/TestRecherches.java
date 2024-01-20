@@ -83,8 +83,11 @@ public class TestRecherches {
         for (Etudiant e : liste4.lesElements)
             if (e!=null) {
                 assertEquals(Main.rechercheSansRupture(liste1, "Jean", "Michealle").etudiant, null);
+                assertEquals(Main.rechercheSansRupture(liste1, null, null).etudiant, null);
                 assertEquals(Main.rechercheAvecRupture(liste1,"Jean", "Michealle").etudiant,null);
+                assertEquals(Main.rechercheAvecRupture(liste1,null, null).etudiant,null);
                 assertEquals(Main.rechercheDichotomie(liste1,"Jean", "Michealle").etudiant,null);
+                assertEquals(Main.rechercheDichotomie(liste1,null, null).etudiant,null);
             }
     }
 
