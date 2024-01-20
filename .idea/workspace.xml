@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="test fait et passés">
+    <list default="true" id="fdf1a47d-c7b6-4745-a042-f2824ca3e815" name="Changes" comment="Tout les tests fait et passés">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experimentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experimentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestRecherches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestRecherches.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,10 +41,20 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Prgrammation/Cours/aventuriers-monde"
+    "last_opened_file_path": "D:/Cours/S1/Dev/SAE-1.02"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestRecherches.testRechercheDichotomie">
+  <component name="RunManager" selected="JUnit.TestRecherches.testEtuNotExist">
+    <configuration name="TestRecherches.testEtuNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SAE 1.02" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestRecherches" />
+      <option name="METHOD_NAME" value="testEtuNotExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestRecherches.testRechercheAvecRupture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SAE 1.02" />
       <option name="PACKAGE_NAME" value="" />
@@ -74,6 +87,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestRecherches.testEtuNotExist" />
         <item itemvalue="JUnit.TestRecherches.testRechercheDichotomie" />
         <item itemvalue="JUnit.TestRecherches.testRechercheAvecRupture" />
         <item itemvalue="JUnit.TestRecherches.testRechercheSansRupture" />
@@ -90,7 +104,8 @@
       <updated>1704968213883</updated>
       <workItem from="1704968215219" duration="1842000" />
       <workItem from="1704970158440" duration="636000" />
-      <workItem from="1705706033049" duration="8153000" />
+      <workItem from="1705706033049" duration="8766000" />
+      <workItem from="1705746483567" duration="364000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1704968373229</created>
@@ -127,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705715154253</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tout les tests fait et passés">
+      <created>1705715932009</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705715932009</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +172,7 @@
     <MESSAGE value="trier etu" />
     <MESSAGE value="rechercheDichotomie fini, à tester" />
     <MESSAGE value="test fait et passés" />
-    <option name="LAST_COMMIT_MESSAGE" value="test fait et passés" />
+    <MESSAGE value="Tout les tests fait et passés" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tout les tests fait et passés" />
   </component>
 </project>

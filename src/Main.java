@@ -123,7 +123,7 @@ public class Main{
                 if (pfTNPEtu.lesElements[i].prenom.equals(pfPrenom)) {
                     comparaisons+=2;
                     passageBoucle++;
-                    retour= new Experimentation(pfTNPEtu.lesElements[i], passageBoucle, comparaisons);
+                    retour= new Experimentation(pfTNPEtu.lesElements[i], passageBoucle, comparaisons,i);
                 }
             }
             comparaisons++;
@@ -156,7 +156,7 @@ public class Main{
                 if (pfTNPEtu.lesElements[i].prenom.equals(pfPrenom)) {
                     comparaisons+=2;
                     passageBoucle++;
-                    return new Experimentation(pfTNPEtu.lesElements[i], passageBoucle, comparaisons);
+                    return new Experimentation(pfTNPEtu.lesElements[i], passageBoucle, comparaisons,i);
                 }
             }
             comparaisons++;
@@ -181,12 +181,12 @@ public class Main{
         int borneInf= 0;
         int borneSup= pfTNPEtu.nbElt;
 
-        while (borneSup!=borneInf){
+        while (borneSup!=borneInf && passageBoucle<pfTNPEtu.nbElt/2){
             if (pfNom.compareTo(pfTNPEtu.lesElements[indice].nom)==0){
                 if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)==0){
                     passageBoucle++;
                     comparaisons++;
-                    return new Experimentation(pfTNPEtu.lesElements[indice],passageBoucle,comparaisons);
+                    return new Experimentation(pfTNPEtu.lesElements[indice],passageBoucle,comparaisons,indice);
                 } else if (pfPrenom.compareTo(pfTNPEtu.lesElements[indice].prenom)>0) {
                     comparaisons+=2;
                     borneInf=indice;
